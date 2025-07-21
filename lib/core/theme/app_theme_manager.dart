@@ -4,7 +4,51 @@ import 'package:flutter/material.dart';
 abstract class AppThemeManager {
   static ThemeData lightTheme = ThemeData(
     primaryColor: ColorPallete.primaryColor,
-    scaffoldBackgroundColor: Colors.white
+    scaffoldBackgroundColor: ColorPallete.scaffoldBackgroundColor,
+    appBarTheme: AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(color: Colors.black),
+      titleTextStyle: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 24,
+        fontWeight: FontWeight.w500,
+        color: ColorPallete.generalTextColor
+      ),
+    ),
+    textTheme: TextTheme(
+      headlineSmall: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 24,
+        fontWeight: FontWeight.w600,
+      ),
+      titleLarge: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
+      titleMedium: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+      ),
+      titleSmall: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: ColorPallete.textFormFieldTextColor,
+      ),
+      bodyLarge: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+      ),
+      bodyMedium: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
   );
 
   static ThemeData darkTheme = ThemeData(
