@@ -4,14 +4,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
 
 class CustomTextFormFiled extends StatefulWidget {
+  final TextEditingController? controller;
   final String? hintText;
   final Widget? prefixIcon;
   final bool isPassword;
+  final int? maxLines;
+  final int? minLines;
+  final String? Function(String?)? validator;
 
   const CustomTextFormFiled({
     super.key,
     this.hintText,
+    this.controller,
     this.prefixIcon,
+    this.maxLines = 1,
+    this.minLines,
+    this.validator,
     this.isPassword = false,
   });
 
@@ -26,10 +34,14 @@ class _CustomTextFormFiledState extends State<CustomTextFormFiled> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     return TextFormField(
-      ///          true               true
-      obscureText: widget.isPassword ? obscureText : false, // true
+      controller: widget.controller,
+      obscureText: widget.isPassword ? obscureText : false,
+      // true
       cursorColor: ColorPallete.textFormFieldBorderColor,
       style: theme.textTheme.titleSmall,
+      maxLines: widget.maxLines,
+      minLines: widget.minLines,
+      validator: widget.validator,
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: theme.textTheme.titleSmall,

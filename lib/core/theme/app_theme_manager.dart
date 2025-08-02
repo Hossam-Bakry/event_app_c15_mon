@@ -8,13 +8,21 @@ abstract class AppThemeManager {
     appBarTheme: AppBarTheme(
       centerTitle: true,
       backgroundColor: Colors.transparent,
-      iconTheme: IconThemeData(color: Colors.black),
+      iconTheme: IconThemeData(color: ColorPallete.primaryColor),
       titleTextStyle: TextStyle(
         fontFamily: 'Inter',
         fontSize: 24,
         fontWeight: FontWeight.w500,
-        color: ColorPallete.generalTextColor
+        color: ColorPallete.primaryColor,
       ),
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      type: BottomNavigationBarType.fixed,
+      backgroundColor: ColorPallete.primaryColor,
+      selectedItemColor: Colors.white,
+      selectedIconTheme: IconThemeData(color: Colors.white),
+      unselectedItemColor: Colors.white,
+      unselectedIconTheme: IconThemeData(color: Colors.white),
     ),
     textTheme: TextTheme(
       headlineSmall: TextStyle(

@@ -66,6 +66,10 @@ class LoginView extends StatelessWidget {
                 CustomButton(
                   onPressed: () {
                     /// TODO: navigate to home page
+                    Navigator.of(context).pushNamedAndRemoveUntil(
+                      PageRoutesName.layout,
+                      (route) => false,
+                    );
                   },
                   child: Text(
                     "Login",

@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        padding: EdgeInsets.symmetric(vertical: 16.0),
+        padding: EdgeInsets.symmetric(vertical: 14.0),
         backgroundColor: backgroundColor ?? ColorPallete.primaryColor,
         overlayColor: Colors.transparent,
         shadowColor: Colors.transparent,
