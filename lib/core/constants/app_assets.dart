@@ -26,4 +26,5 @@ abstract class AppAssets {
   static const String workshopImg = 'assets/images/workshop_img.png';
   static const String booClubIcn = 'assets/icons/bookClub_icn.png';
   static const String birthdayIcn = 'assets/icons/birthday_icn.png';
+  static const String routeLogo = 'assets/images/route_logo.png';
 }

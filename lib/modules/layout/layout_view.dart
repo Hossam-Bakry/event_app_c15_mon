@@ -1,8 +1,11 @@
 import 'package:event_app_c15_mon/core/constants/app_assets.dart';
 import 'package:event_app_c15_mon/core/routes/page_routes_name.dart';
 import 'package:event_app_c15_mon/core/theme/color_pallete.dart';
+import 'package:event_app_c15_mon/modules/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bounceable/flutter_bounceable.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 import 'home/home_view.dart';
 import 'maps/maps_view.dart';
@@ -28,6 +31,7 @@ class _LayoutViewState extends State<LayoutView> {
 
   @override
   Widget build(BuildContext context) {
+    var local = AppLocalizations.of(context)!;
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Bounceable(
@@ -39,7 +43,10 @@ class _LayoutViewState extends State<LayoutView> {
           backgroundColor: Colors.white,
           child: CircleAvatar(
             radius: 26,
-            backgroundColor: ColorPallete.primaryColor,
+            backgroundColor:
+                Provider.of<SettingsProvider>(context).isDark()
+                    ? ColorPallete.scaffoldDarkBackgroundColor
+                    : ColorPallete.primaryColor,
             child: Icon(Icons.add, color: Colors.white, size: 30),
           ),
         ),
@@ -56,22 +63,22 @@ class _LayoutViewState extends State<LayoutView> {
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage(AppAssets.homeIcn)),
             activeIcon: ImageIcon(AssetImage(AppAssets.homeActiveIcn)),
-            label: "Home",
+            label: local.home,
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage(AppAssets.mapsIcn)),
             activeIcon: ImageIcon(AssetImage(AppAssets.mapsActiveIcn)),
-            label: "Maps",
+            label: local.maps,
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage(AppAssets.favoriteIcn)),
             activeIcon: ImageIcon(AssetImage(AppAssets.favoriteActiveIcn)),
-            label: "Favorites",
+            label: local.favorites,
           ),
           BottomNavigationBarItem(
             icon: ImageIcon(AssetImage(AppAssets.userIcn)),
             activeIcon: ImageIcon(AssetImage(AppAssets.userActiveIcn)),
-            label: "Profile",
+            label: local.profile,
           ),
         ],
       ),

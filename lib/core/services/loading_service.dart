@@ -1,6 +1,8 @@
-import 'package:event_app_c15_mon/core/theme/color_pallete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+
+import 'package:event_app_c15_mon/core/theme/color_pallete.dart';
 
 void configLoading() {
   EasyLoading.instance

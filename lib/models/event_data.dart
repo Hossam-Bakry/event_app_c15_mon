@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class EventData {
   static const String collectionName = "event_tasks";
   String? eventId;
@@ -7,6 +9,7 @@ class EventData {
   String eventCategoryId;
   bool isFavourite;
   DateTime selectedDate;
+  // TimeOfDay selectedTime;
 
   EventData({
     this.eventId,
@@ -16,6 +19,7 @@ class EventData {
     required this.eventCategoryId,
     this.isFavourite = false,
     required this.selectedDate,
+    // required this.selectedTime,
   });
 
   /// Json || Map<String, dynamic>
@@ -28,8 +32,10 @@ class EventData {
       eventCategoryId: data["eventCategoryId"],
       isFavourite: data["isFavourite"],
       selectedDate: DateTime.fromMillisecondsSinceEpoch(data["selectedDate"]),
+      // selectedTime:
     );
   }
+
 
   Map<String, dynamic> toFireStore() {
     return {
@@ -40,6 +46,7 @@ class EventData {
       "eventCategoryId": eventCategoryId,
       "isFavourite": isFavourite,
       "selectedDate": selectedDate.millisecondsSinceEpoch,
+      // "selectedTime": selectedTime.toString(),
     };
   }
 }
